@@ -22,9 +22,9 @@ export default async function Home() {
         {/* @ts-expect-error Async Server Component */}
         <Category
           data={fetch(
-            x.data,
+            `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API}`,
             {cache:"no-store"})} 
-            Category_name={x.Category_name}
+            Category_name="Name"
             
             />
       </Suspense>
