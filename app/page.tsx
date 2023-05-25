@@ -18,14 +18,14 @@ export default async function Home() {
     <div className="   md:px-5  md:py-2 text-white h-[100vh]">
       {
         arr.map((x)=>(
-        <Suspense fallback={<LoadingSkel /> }>
+        <Suspense fallback={<LoadingSkel /> } key={x.Category_name}>
         {/* @ts-expect-error Async Server Component */}
         <Category
           data={fetch(
             x.data,
             {cache:"no-store"})} 
             Category_name={x.Category_name}
-            key={x.Category_name}
+            
             />
       </Suspense>
 
