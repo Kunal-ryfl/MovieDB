@@ -6,7 +6,7 @@ import LoadingSkel from "./(components)/LoadingSkel";
 import { Category_type } from "@/lib/types";
 
 const inter = Inter({ subsets: ["latin"] });
-
+export const dynamic = 'force-dynamic'
 let arr:Category_type[] = [
 {data:`https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.NEXT_PUBLIC_API}`,Category_name:"Trending"},
 {data:`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API}`,Category_name:"Popular"},
@@ -22,9 +22,9 @@ export default async function Home() {
         {/* @ts-expect-error Async Server Component */}
         <Category
           data={fetch(
-            `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.NEXT_PUBLIC_API}`,
+            x.data,
             {cache:"no-store"})} 
-            Category_name="Name"
+            Category_name={x.Category_name}
             
             />
       </Suspense>
