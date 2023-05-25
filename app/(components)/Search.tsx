@@ -50,7 +50,7 @@ export function Search() {
       <div className="p-2 ">
         <h4 className="mb-4 text-base  font-medium leading-none text-slate-400">Movies </h4>
         {searchArray.length>0 && searchArray.map((item:movie) => (
-          <React.Fragment>
+          <React.Fragment key={item.id}>
 
 
 
